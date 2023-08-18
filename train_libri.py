@@ -23,7 +23,7 @@ config_path = paras.config_path
 
 # Load config file for experiment
 print('Loading configure file at',config_path)
-conf = yaml.load(open(config_path,'r'))
+conf = yaml.load(open(config_path,'r'), Loader=yaml.Loader)
 
 # Parameters loading
 print()

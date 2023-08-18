@@ -19,7 +19,7 @@ model_parameter:
   speller_hidden_dim: 512                     # Default speller LSTM output dimension from LAS paper
   output_class_dim: 63                        # 61 phonemes + 2 for <sos> & <eos>
   rnn_unit: 'LSTM'                            # Default recurrent unit in the original paper
-  use_gpu: True
+  use_gpu: False
   bucketing: False                            # Bucket training data by input sequence length 
                                               # (Tested and found not improving performance on TIMIT)
   label_smoothing: 0.1                        # Epsilon for label smoothing (set 0 to disable LS)
@@ -34,6 +34,6 @@ training_parameter:
   tf_rate_lowerbound: 0.0                     # decayinn from upperbound to lower bound for each epoch
   verbose_step: 5                             # Show progress every verbose_step
   valid_step: 100
-  use_pretrained: False                       # Load a pretrained model, model path should be given
+  use_pretrained: True                       # Load a pretrained model, model path should be given
   pretrained_listener_path: 'checkpoint/las_example.listener' 
   pretrained_speller_path: 'checkpoint/las_example.speller' 
